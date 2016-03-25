@@ -1,0 +1,87 @@
+html, body
+  padding: 0
+  margin: 0
+
+ul, menu, dir
+  -webkit-margin-before: 0
+  -webkit-margin-after: 0
+  -webkit-margin-start: 0
+  -webkit-margin-end: 0
+  -webkit-padding-start: 0
+
+.header
+  background: #0866c6
+  clear: both
+  height: 110px
+
+  .logo
+    width: 260px
+    text-align: center
+    padding-top: 30px
+    float: left
+
+    .logo-text
+      font-size: 35px
+      color: white
+      letter-spacing: 2px
+
+  .headerinner
+    margin-left: 260px
+
+  ul.headmenu
+    margin: 0
+    list-style: none
+
+    li
+      display: inline-block
+      float: left
+      font-size: 14px
+      position: relative
+      border-right: 1px solid rgba(255,255,255,0.15)
+
+      &:first-child
+        border-left: 1px solid rgba(255,255,255,0.15)
+
+    a
+      min-width: 70px
+      position: relative
+      display: block
+      color: #fff
+      padding: 20px 20px 9px 20px
+      cursor: pointer
+
+      .head-icon
+        width: 50px
+        height: 50px
+        display: block
+        margin: auto
+        opacity: 0.5
+
+      .head-message
+        background-image: image-url('message.png')
+
+      .headmenu-label
+        display: block
+        margin: 2px 0 3px 0
+        opacity: 0.5
+        text-align: center
+
+.leftpanel
+  width: 260px
+  color: #fff
+  background: #3B3738
+  float: left
+
+  .nav
+    a
+      color: #fff
+
+      &:hover
+        background: #232323
+        border: 1px solid transparent
+
+.rightpanel
+  margin-left: 260px
+
+  .maincontent
+    padding: 10px
