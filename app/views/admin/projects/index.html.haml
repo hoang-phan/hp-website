@@ -1,6 +1,7 @@
 %h3= link_to 'New', new_admin_project_path
 - collection.each do |project|
-  %p= link_to project.name, edit_admin_project_path(project)
-  %p= project.start_date.strftime('%d/%m/%Y')
-  %p= project.end_date.strftime('%d/%m/%Y')
-  %p= link_to 'Delete', [:admin, project], method: :delete, data: { confirm: 'Are you sure?' }
+  .project
+    %p= link_to project.name, edit_admin_project_path(project)
+    %p= project.start_date.strftime('%m/%d/%Y')
+    %p= project.end_date.strftime('%m/%d/%Y')
+    %p= link_to 'Delete', [:admin, project], method: :delete, data: { confirm: 'Are you sure?' }

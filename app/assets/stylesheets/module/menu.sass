@@ -25,9 +25,6 @@ ul, menu, dir
       color: white
       letter-spacing: 2px
 
-  .headerinner
-    margin-left: 260px
-
   ul.headmenu
     margin: 0
     list-style: none
@@ -67,21 +64,31 @@ ul, menu, dir
         text-align: center
 
 .leftpanel
-  width: 260px
+  width: 261px
   color: #fff
   background: #3B3738
   float: left
 
   .nav
-    a
-      color: #fff
+    li
+      &.active
+        a, a:hover
+          background: #0866c6
+          border: 0
+          color: #fff
+      a
+        color: #fff
+        border: 0
+        border-radius: 0
 
-      &:hover
-        background: #232323
-        border: 1px solid transparent
+        &:hover
+          background: #232323
 
 .rightpanel
   margin-left: 260px
 
   .maincontent
     padding: 10px
+
+.nav-stacked
+  min-height: 600px
