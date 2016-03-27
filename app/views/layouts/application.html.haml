@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title HpWebsite
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  %body
+    #mainwrapper
+      .header
+        .logo
+          %span.logo-text H.P Admin
+        .headerinner
+          %ul.headmenu
+            %li
+              = link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' } do
+                %span.head-icon.head-message
+                %span.headmenu-label Message
+    = render 'layouts/sidebar'
+    .rightpanel
+      .maincontent
+        .flash
+          - flash.each do |type, message|
+            .alert.fade.in{ class: flash_class_for(type) }= message
+        = yield
+    = javascript_include_tag 'application'
