@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'inherited_resources'
 gem 'haml-rails'
 gem 'bootstrap-sass'
+gem 'figaro'
+gem 'puma'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
@@ -23,6 +25,11 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
 
 group :test do
