@@ -15,6 +15,7 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
   - cp config/database.yml.example config/database.yml
+  - cp config/application.yml.example config/application.yml
   - bundle exec rake db:test:prepare
 script:
   - bundle exec rspec spec

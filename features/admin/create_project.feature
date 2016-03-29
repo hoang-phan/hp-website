@@ -1,3 +1,4 @@
+@admin
 Feature: As an admin
   I want to create a project
 
