@@ -60,3 +60,12 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 
 World FactoryGirl::Syntax::Methods
 
+Before('@admin') do
+  if page.driver.respond_to?(:basic_auth)
+    page.driver.basic_auth(ENV['USER_NAME'], ENV['PASSWORD'])
+  elsif page.driver.respond_to?(:basic_authorize)
+    page.driver.basic_authorize(ENV['USER_NAME'], ENV['PASSWORD'])
+  elsif page.driver.respond_to?(:browser) && page.driver.browser.respond_to?(:basic_authorize)
+    page.driver.browser.basic_authorize(ENV['USER_NAME'], ENV['PASSWORD'])
+  end
+end
