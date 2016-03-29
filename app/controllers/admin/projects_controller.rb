@@ -3,7 +3,6 @@ class Admin::ProjectsController < ApplicationController
   respond_to :html
 
   before_action :set_current_tab
-  before_action :normalize_dates, only: [:create, :update]
 
   def create
     create! do |success, failure|
@@ -25,10 +24,5 @@ class Admin::ProjectsController < ApplicationController
 
   def set_current_tab
     @current_tab = :projects
-  end
-
-  def normalize_dates
-    params[:project][:start_date] = Date.strptime(params[:project][:start_date], '%m/%d/%Y').to_s
-    params[:project][:end_date] = Date.strptime(params[:project][:end_date], '%m/%d/%Y').to_s
   end
 end
