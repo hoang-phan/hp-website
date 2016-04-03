@@ -16,11 +16,12 @@
               = link_to '#', class: 'dropdown-toggle', data: { toggle: 'dropdown' } do
                 %span.head-icon.head-message
                 %span.headmenu-label Message
-    = render 'layouts/sidebar'
-    .rightpanel
-      .maincontent
-        .flash
-          - flash.each do |type, message|
-            .alert.fade.in{ class: flash_class_for(type) }= message
-        = yield
+      = render 'layouts/sidebar'
+      .rightpanel
+        .maincontent
+          .flash
+            - flash.each do |type, message|
+              .alert.fade.in{ class: flash_class_for(type) }= message
+          .container-fluid
+            = yield
     = javascript_include_tag 'application'

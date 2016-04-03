@@ -22,4 +22,3 @@ end
 Then(/^I should be on the projects page$/) do
   expect(current_path).to eq admin_projects_path
 end
-
