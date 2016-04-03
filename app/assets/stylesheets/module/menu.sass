@@ -1,3 +1,6 @@
+$primary_color: #0866C6
+$top_menu_border_color: rgba(255,255,255,0.15)
+
 html, body
   padding: 0
   margin: 0
@@ -10,7 +13,7 @@ ul, menu, dir
   -webkit-padding-start: 0
 
 .header
-  background: #0866c6
+  background: $primary_color
   clear: both
   height: 110px
 
@@ -34,10 +37,10 @@ ul, menu, dir
       float: left
       font-size: 14px
       position: relative
-      border-right: 1px solid rgba(255,255,255,0.15)
+      border-right: 1px solid $top_menu_border_color
 
       &:first-child
-        border-left: 1px solid rgba(255,255,255,0.15)
+        border-left: 1px solid $top_menu_border_color
 
     a
       min-width: 70px
@@ -73,7 +76,7 @@ ul, menu, dir
     li
       &.active
         a, a:hover
-          background: #0866c6
+          background: $primary_color
           border: 0
           color: #fff
       a
