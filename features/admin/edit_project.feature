@@ -2,11 +2,13 @@
 Feature: As an admin
   I want to edit a project
 
-Scenario: Update a project successfully
+Background:
   Given I have projects
   | name      | start_date | end_date   |
   | project 1 | 12/10/2012 | 1/20/2016  |
-  Given I visit edit project path of "project 1"
+  And I visit edit project path of "project 1"
+
+Scenario: Update a project successfully
   When I fill in "Name" with "My project"
   And I fill in "Start date" with "2015-12-15"
   And I fill in "End date" with "2015-12-18"
@@ -16,3 +18,8 @@ Scenario: Update a project successfully
   And the project should be updated with
   | name        | start_date | end_date   |
   | My project  | 12/15/2015 | 12/18/2015 |
+
+Scenario: Update a project failed
+  When I fill in "Name" with ""
+  And I click on "Update Project"
+  Then I should see "Name can't be blank"
