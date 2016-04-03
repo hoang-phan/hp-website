@@ -29,5 +29,3 @@ Then(/^I should see link to edit and delete project "([^"]*)"$/) do |name|
   }.to change(Project, :count).by(-1)
   expect(page).not_to have_content(name)
 end
-
-
