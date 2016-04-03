@@ -1,7 +1,20 @@
-%h3= link_to 'New', new_admin_project_path
-- collection.each do |project|
-  .project
-    %p= link_to project.name, edit_admin_project_path(project)
-    %p= project.start_date.strftime('%m/%d/%Y')
-    %p= project.end_date.strftime('%m/%d/%Y')
-    %p= link_to 'Delete', [:admin, project], method: :delete, data: { confirm: 'Are you sure?' }
+%h3.section-header 
+  All projects
+  = link_to 'New Project', new_admin_project_path, class: 'btn btn-primary pull-right'
+
+%table.table.table-hover.table-striped
+  %thead
+    %tr
+      %td Name
+      %td Start date
+      %td End date
+      %td
+  %tbody
+    - collection.each do |project|
+      %tr
+        %td= project.name
+        %td= project.start_date.strftime('%m/%d/%Y')
+        %td= project.end_date.strftime('%m/%d/%Y')
+        %td
+          = link_to 'Edit', edit_admin_project_path(project)
+          = link_to 'Delete', [:admin, project], method: :delete, data: { confirm: 'Are you sure?' }

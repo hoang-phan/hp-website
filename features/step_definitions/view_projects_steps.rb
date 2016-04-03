@@ -14,7 +14,7 @@ end
 
 Then(/^I should see all the projects$/) do |table|
   table.raw.each do |row|
-    target = page.find('.project', text: row.first)
+    target = page.find('tr', text: row.first)
     row[1..-1].each do |element|
       expect(target).to have_content(element)
     end
@@ -23,9 +23,9 @@ end
 
 Then(/^I should see link to edit and delete project "([^"]*)"$/) do |name|
   project = Project.find_by(name: name)
-  expect(page).to have_link(name, href: edit_admin_project_path(project))
+  expect(page).to have_link('Edit', href: edit_admin_project_path(project))
   expect {
-    page.find('.project', text: name).click_on('Delete')
+    page.find('tr', text: name).click_on('Delete')
   }.to change(Project, :count).by(-1)
   expect(page).not_to have_content(name)
 end
