@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resource :home, only: [:show]
+
   namespace :admin do
     resources :projects
     resources :members
@@ -6,4 +8,6 @@ Rails.application.routes.draw do
 
     root to: 'dashboards#show'
   end
+
+  root to: 'homes#show'
 end

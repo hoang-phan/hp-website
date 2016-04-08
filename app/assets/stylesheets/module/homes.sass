@@ -1,0 +1,69 @@
+html, body
+  font-family
+
+#menu
+  position: fixed
+  top: 0
+  left: 50%
+  margin-left: -495px
+  width: 990px
+  height: 47px
+  z-index: 99
+
+  > *
+    position: absolute
+    height: 100%
+    border-bottom: 3px solid burlywood
+
+  #menu-buttons
+    width: 100%
+    background: white
+
+    > a
+      position: relative
+      display: block
+      margin: 10px 0 0 32px
+      height: 12px
+      float: left
+      font-size: 18px
+      font-family: fantasy
+
+      &:visited, &:hover
+        text-decoration: none
+
+    #menu-github
+      margin: 0 10px
+
+    img
+      margin: 2px
+      width: 40px
+      height: 40px
+
+.background
+  position: relative
+  margin: 0
+  height: 780px
+  background: image-url('background.jpg')
+  background-size: 100% 100%
+  overflow: hidden
+
+  .cover
+    margin-left: 15%
+    margin-top: 10%
+    width: 80%
+    .quote
+      font-size: 30px
+      width: 70%
+      display: inline-block
+      font-family: Roboto
+      font-style: italic
+      font-weight: bold
+      color: cadetblue
+    img
+      width: 19%
+      border-radius: 50%
+
+section
+  h2.section-header
+    padding: 10px
+    border-bottom: 3px solid burlywood

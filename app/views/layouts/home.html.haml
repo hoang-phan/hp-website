@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title HpWebsite
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+  %body
+    %nav#menu
+      #menu-buttons
+        = link_to 'Experience', '#'
+        = link_to 'Projects', '#'
+        = link_to 'Education', '#'
+        = link_to 'Contact Information', '#'
+        #menu-github.pull-right
+          = link_to image_tag('github.png'), 'https://github.com/hoang-phan'
+        #menu-sof.pull-right
+          = link_to image_tag('stackoverflow.png'), 'http://stackoverflow.com/users/5109043/hoang-phan'
+    .background
+      .cover
+        %span.quote.text-center “ Trying to learn something about everything and everything about something ! „
+        = image_tag 'avatar.jpg', class: 'avatar'
+    .container
+      = yield
+  = javascript_include_tag 'application'

@@ -12,6 +12,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'figaro'
 gem 'puma'
+gem 'react-rails'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
