@@ -1,10 +1,9 @@
 class Project extends React.Component {
   render () {
     return (
-      <div>
-        <div>Name: {this.props.name}</div>
-        <div>Start Date: {this.props.startDate}</div>
-        <div>End Date: {this.props.endDate}</div>
+      <div className='row project'>
+        <div className='col-sm-4'>{this.props.project.start_month}/{this.props.project.start_year}</div>
+        <div className='col-sm-8'>{this.props.project.name}</div>
       </div>
     );
   }

@@ -4,7 +4,7 @@ end
 
 Then(/^the project should be updated with$/) do |table|
   info = table.hashes[0]
-  expect(Project).to exist(name: info['name'], start_date: info['start_date'], end_date: info['end_date'])
+  expect(Project).to exist(name: info['name'], start_month: info['start_month'], start_year: info['start_year'])
 end
 
 When(/^I check "([^"]*)"$/) do |selector|

@@ -7,14 +7,14 @@ Background:
 
 Scenario: Create a project successfully
   When I fill in "Name" with "My project"
-  And I fill in "Start date" with "2015-12-15"
-  And I fill in "End date" with "2015-12-18"
+  And I fill in "Start month" with "1"
+  And I fill in "Start year" with "2015"
   And I click on "Create Project"
   Then I should see "Project was successfully created"
   And I should be on the projects page
   And the new project should be created with
-  | name        | start_date | end_date   |
-  | My project  | 12/15/2015 | 12/18/2015 |
+  | name        | start_month | start_year  |
+  | My project  | 1           | 2015        |
 
 Scenario: Create a project failed
   When I click on "Create Project"

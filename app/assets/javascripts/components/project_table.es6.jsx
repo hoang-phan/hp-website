@@ -1,10 +1,11 @@
 class ProjectTable extends React.Component {
   render () {
-    var rows = this.props.projects.map(function(project) {
-      return <Project name={project.name} startDate={project.startDate} endDate={project.endDate} />;
+    var rows = [];
+    this.props.projects.forEach(function(project) {
+      rows.push(<Project key={project.id} project={project} />);
     });
     return (
-      <div class='project-row'>{rows}</div>
+      <div className='project-rows'>{rows}</div>
     );
   }
 }

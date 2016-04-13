@@ -1,9 +1,9 @@
 Given(/^I have projects$/) do |table|
   table.hashes.each do |row|
-    create(:project, 
+    create(:project,
       name: row['name'],
-      start_date: Date.strptime(row['start_date'], '%m/%d/%Y'),
-      end_date: Date.strptime(row['end_date'], '%m/%d/%Y')
+      start_month: row['start_month'],
+      start_year: row['start_year']
     )
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331122110) do
+ActiveRecord::Schema.define(version: 20160411071635) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,15 +38,15 @@ ActiveRecord::Schema.define(version: 20160331122110) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "start_month", default: 1
+    t.integer  "start_year",  default: 2000
   end
 
-  add_index "projects", ["end_date"], name: "index_projects_on_end_date", using: :btree
   add_index "projects", ["name"], name: "index_projects_on_name", using: :btree
-  add_index "projects", ["start_date"], name: "index_projects_on_start_date", using: :btree
+  add_index "projects", ["start_month"], name: "index_projects_on_start_month", using: :btree
+  add_index "projects", ["start_year"], name: "index_projects_on_start_year", using: :btree
 
   add_foreign_key "member_projects", "members", on_delete: :cascade
   add_foreign_key "member_projects", "projects", on_delete: :cascade

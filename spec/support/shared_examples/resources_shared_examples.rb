@@ -6,9 +6,9 @@ shared_examples_for 'resources controller' do |resource_name|
   let(:resource_params) do
     attributes_for(resource_name).merge(name: name)
   end
-  
+
   let(:name) { Faker::Name.name }
-  
+
   describe 'POST create' do
     let(:params) do
       {
