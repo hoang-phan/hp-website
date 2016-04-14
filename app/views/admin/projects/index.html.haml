@@ -12,7 +12,7 @@
     - collection.each do |project|
       %tr
         %td= project.name
-        %td= "#{project.start_month.to_s.rjust(2, '0')}/#{project.start_year}"
+        %td= "#{project.start_month.to_s.rjust(2, '0')} - #{project.start_year}"
         %td
           = link_to 'Edit', edit_admin_project_path(project)
           = link_to 'Delete', [:admin, project], method: :delete, data: { confirm: 'Are you sure?' }
